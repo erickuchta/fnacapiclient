@@ -9,6 +9,7 @@
 
 namespace FnacApiClient\Service\Request;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 use FnacApiClient\Entity\Offer;
 
@@ -16,16 +17,16 @@ use FnacApiClient\Entity\Offer;
  * OfferUpdate Service's definition.
  *
  * @author     Fnac
- * @version    1.0.0
+ * @author     Eric Kuchta
+ * @version    1.0.1
  */
-
 class OfferUpdate extends Authentified
 {
     const ROOT_NAME = "offers_update";
     const XSD_FILE = "OffersUpdateService.xsd";
     const CLASS_RESPONSE = "FnacApiClient\Service\Response\OfferUpdateResponse";
 
-    private $offers = array();
+    private $offers;
 
     /**
      * {@inheritdoc}
@@ -34,17 +35,17 @@ class OfferUpdate extends Authentified
     {
         parent::__construct($parameters);
 
-        $this->offers = new \ArrayObject();
+        $this->offers = new ArrayObject();
     }
 
     /**
      * {@inheritdoc}
      */
-    public function normalize(NormalizerInterface $normalizer, $format = null, array $context = array())
+    public function normalize(NormalizerInterface $normalizer, $format = null, array $context = [])
     {
         $data = parent::normalize($normalizer, $format);
 
-        $data['offer'] = array();
+        $data['offer'] = [];
 
         if ($this->offers->count() > 1) {
             foreach ($this->offers as $offer) {

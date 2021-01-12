@@ -11,7 +11,6 @@ namespace FnacApiClient\Entity;
 
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * Promotion definition.
@@ -38,6 +37,7 @@ class Promotion extends Entity
     private $trigger_cart;
     private $trigger_promotion_code;
     private $trigger_customer_type;
+    private $sales_period_reference;
 
     /**
      * {@inheritDoc}
@@ -312,5 +312,22 @@ class Promotion extends Entity
     {
         $this->triggers = $triggers;
     }
-    
+
+    /**
+     * @return mixed
+     */
+    public function getSalesPeriodReference()
+    {
+        return $this->sales_period_reference;
+    }
+
+    /**
+     * @param mixed $sales_period_reference
+     *
+     * @return Promotion
+     */
+    public function setSalesPeriodReference($sales_period_reference)
+    {
+        $this->sales_period_reference = $sales_period_reference;
+    }
 }

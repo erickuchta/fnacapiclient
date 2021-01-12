@@ -9,17 +9,16 @@
 
 namespace FnacApiClient\Entity;
 
+use FnacApiClient\Type\ProductType;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
-
-use FnacApiClient\Type\ProductType;
 
 /**
  * Offer definition.
  *
  * @author     Fnac
- * @version    1.0.0
+ * @author     Eric Kuchta
+ * @version    1.0.1
  */
 
 class Offer extends Entity
@@ -30,6 +29,7 @@ class Offer extends Entity
     private $offer_reference;
     private $offer_reference_type;
     private $treatment;
+    private $pictures;
 
     /** Get Variable **/
     private $product_name;
@@ -44,15 +44,17 @@ class Offer extends Entity
 
     /** Both **/
     private $product_state;
-    private $price;    
+    private $price;
     private $adherent_price;
     private $quantity;
     private $description;
     private $internal_comment;
     private $showcase;
     private $promotion;
+    private $logistic_type_id;
+    private $time_to_ship;
 
-    const STATE_NEW             = 11;    
+    const STATE_NEW             = 11;
     const STATE_USED_AS_NEW     = 1;
     const STATE_USED_VERY_GOOD  = 2;
     const STATE_USED_GOOD       = 3;
@@ -119,6 +121,18 @@ class Offer extends Entity
             $data['treatment'] = $this->treatment;
         }
 
+        if (!is_null($this->pictures)) {
+            $data['pictures'] = $this->pictures;
+        }
+    
+        if (!is_null($this->logistic_type_id)) {
+            $data['logistic_type_id'] = $this->logistic_type_id;
+        }
+        
+        if (!is_null($this->time_to_ship)) {
+            $data['time_to_ship'] = $this->time_to_ship;
+        }
+
         if (!is_null($this->promotion)) {
             $data['promotion'] = $this->promotion;
         }
@@ -135,11 +149,12 @@ class Offer extends Entity
         $this->product_fnac_id = $data['product_fnac_id'];
         $this->offer_fnac_id = $data['offer_fnac_id'];
         $this->offer_seller_id = $data['offer_seller_id'];
+        $this->logistic_type_id = $data['logistic_type_id'];
         $this->product_state = (int) $data['product_state'];
         $this->price = (float) $data['price'];
         if(isset($data['adherent_price']))
         {
-          $this->adherent_price = (float) $data['adherent_price'];          
+            $this->adherent_price = (float) $data['adherent_price'];
         }
         $this->quantity = (int) $data['quantity'];
         $this->description = $data['description'];
@@ -156,10 +171,20 @@ class Offer extends Entity
         {
             $this->fee_excluding_taxes = (float) $data['fee_excluding_taxes'];
         }
-        
+    
         if(isset($data['fee_including_all_taxes']))
         {
             $this->fee_including_all_taxes = (float) $data['fee_including_all_taxes'];
+        }
+    
+        if(isset($data['logistic_type_id']))
+        {
+            $this->logistic_type_id = (float) $data['logistic_type_id'];
+        }
+    
+        if(isset($data['time_to_ship']))
+        {
+            $this->time_to_ship = (float) $data['time_to_ship'];
         }
 
         if(isset($data['promotion']))
@@ -168,12 +193,19 @@ class Offer extends Entity
             $tmpObj->denormalize($denormalizer, $data['promotion'], $format);
             $this->promotion = $tmpObj;
         }
+
+        if(isset($data['pictures']))
+        {
+            $tmpObj = new Pictures();
+            $tmpObj->denormalize($denormalizer, $data['pictures'], $format);
+            $this->pictures = $tmpObj;
+        }
     }
 
     /**
      * Set product's reference type
      *
-     * @see FnacApiClient\Type\ProductType
+     * @see \FnacApiClient\Type\ProductType
      *
      * @param string $product_reference_type : Type of product reference
      */
@@ -195,7 +227,7 @@ class Offer extends Entity
     /**
      * Set offer's reference type
      *
-     * @see FnacApiClient\Type\OfferReferenceType
+     * @see \FnacApiClient\Type\OfferReferenceType
      *
      * @param string $offer_reference_type : Type of offer reference
      */
@@ -224,6 +256,16 @@ class Offer extends Entity
         $this->price = $price;
     }
     
+    /**
+     * Set offer's logistic_type_id
+     *
+     * @param integer $logistic_type_id : Logistic_type_id to set for this offer
+     */
+    public function setLogisticTypeId($logistic_type_id)
+    {
+        $this->logistic_type_id = $logistic_type_id;
+    }
+
     /**
      * Set offer's "adherent" price
      *
@@ -287,7 +329,7 @@ class Offer extends Entity
     /**
      * Set treatment to do on offer
      *
-     * @see FnacApiClient\Type\OfferTreatmentType
+     * @see \FnacApiClient\Type\OfferTreatmentType
      *
      * @param string $treatment
      */
@@ -305,6 +347,26 @@ class Offer extends Entity
     {
         $this->promotion = $promotion;
     }
+
+    /**
+     * Set pictures on offer
+     *
+     * @param Pictures $pictures
+     */
+    public function setPictures($pictures)
+    {
+        $this->pictures = $pictures;
+    }
+    
+    /**
+     * @param mixed $time_to_ship
+     */
+    public function setTimeToShip($time_to_ship)
+    {
+        $this->time_to_ship = $time_to_ship;
+    }
+    
+    
 
     /**
      * Name, category and a short description of product if available
@@ -379,7 +441,7 @@ class Offer extends Entity
     /**
      * Product state in this offer
      *
-     * @see FnacApiClient\Type\ProductStateType
+     * @see \FnacApiClient\Type\ProductStateType
      *
      * @return integer
      */
@@ -391,7 +453,7 @@ class Offer extends Entity
     /**
      * Product state label
      *
-     * @see FnacApiClient\Type\ProductStateType
+     * @see \FnacApiClient\Type\ProductStateType
      *
      * @return string
      */
@@ -479,4 +541,28 @@ class Offer extends Entity
     {
         return $this->fee_including_all_taxes;
     }
+    
+    /**
+     * Offer's Logistic type
+     *
+     * @see \FnacApiClient\Type\LogisticTypeId
+     *
+     * @return string
+     */
+    public function getLogisticTypeId()
+    {
+        return $this->logistic_type_id;
+    }
+    
+    /**
+     * Offer's specific time to ship
+     *
+     * @return int
+     */
+    public function getTimeToShip()
+    {
+        return $this->time_to_ship;
+    }
+    
+    
 }
