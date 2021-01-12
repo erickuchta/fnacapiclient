@@ -1,4 +1,9 @@
 {
+    "name": "erickuchta/fnacapiclient",
+    "homepage": "https://github.com/FnacMarketplace/fnacapiclient",
+    "type": "library",
+    "version": "2.0.0",
+    "description": "Simple PHP improved wrapper for FNAC API",
     "require": {
         "zendframework/zend-http" : "2.3.2",
         "zendframework/zend-uri" : "2.3.2",
@@ -11,5 +16,23 @@
         "symfony/yaml" : "2.0.*",
         "twbs/bootstrap": "^3.3",
         "components/jquery": "^2.2"
+    },
+    "license": "MIT",
+    "keywords": ["fnac", "marketplace"],
+    "authors": [
+        {
+            "name": "FNAC Marketplace",
+            "email": "dl-fd-api.mp@fnac.com"
+        },
+        {
+            "name": "Eric KUCHTA",
+            "email": "eric@kuchta.fr"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "FnacApiClient\\": "src/FnacApiClient/"
+        }
     }
 }
