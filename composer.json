@@ -2,7 +2,7 @@
     "name": "erickuchta/fnacapiclient",
     "homepage": "https://github.com/FnacMarketplace/fnacapiclient",
     "type": "library",
-    "version": "2.0.0",
+    "version": "3.0.0",
     "description": "Simple PHP improved wrapper for FNAC API",
     "require": {
         "zendframework/zend-http" : "2.3.2",
