@@ -1,3 +1,14 @@
+
+# FORK project with a lot of improvements
+> This repository is a fork of https://github.com/FnacMarketplace/fnacapiclient
+
+There is a lot of improvements made
+
+
+## Installing / Getting started	*See the original repository for more information on this package.*
+
+
+
 # Fnac Marketplace API PHP Client
 > A comprehensive PHP library to connect your shop to Fnac.com Marketplace
 
