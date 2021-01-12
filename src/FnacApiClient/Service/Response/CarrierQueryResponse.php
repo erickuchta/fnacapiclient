@@ -22,7 +22,7 @@ use FnacApiClient\Entity\Carrier;
  */
 class CarrierQueryResponse extends ResponseService
 {
-    private $carriers = array();
+    public $carriers = array();
 
     /**
      * {@inheritdoc}

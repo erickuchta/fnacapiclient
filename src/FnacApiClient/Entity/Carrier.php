@@ -27,7 +27,7 @@ class Carrier extends Entity
     /**
      * {@inheritDoc}
      */
-    public function normalize(NormalizerInterface $normalizer, $format = null, array $context = array(), array $context = array(), array $context = array())
+    public function normalize(NormalizerInterface $normalizer, $format = null, array $context = array())
     {
 
     }
@@ -35,7 +35,7 @@ class Carrier extends Entity
     /**
      * {@inheritDoc}
      */
-    public function denormalize(DenormalizerInterface $denormalizer, $data, $format = null, array $context = array())
+    public function denormalize($denormalizer, $data, $format = null, array $context = array())
     {
         $this->name = $data['name'];
         $this->code = $data['@code'];
