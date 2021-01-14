@@ -149,7 +149,6 @@ class Offer extends Entity
         $this->product_fnac_id = $data['product_fnac_id'];
         $this->offer_fnac_id = $data['offer_fnac_id'];
         $this->offer_seller_id = $data['offer_seller_id'];
-        $this->logistic_type_id = $data['logistic_type_id'];
         $this->product_state = (int) $data['product_state'];
         $this->price = (float) $data['price'];
         if(isset($data['adherent_price']))
@@ -179,12 +178,12 @@ class Offer extends Entity
     
         if(isset($data['logistic_type_id']))
         {
-            $this->logistic_type_id = (float) $data['logistic_type_id'];
+            $this->logistic_type_id = (int) $data['logistic_type_id'];
         }
     
         if(isset($data['time_to_ship']))
         {
-            $this->time_to_ship = (float) $data['time_to_ship'];
+            $this->time_to_ship = (int) $data['time_to_ship'];
         }
 
         if(isset($data['promotion']))
