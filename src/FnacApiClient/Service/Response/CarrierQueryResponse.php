@@ -42,9 +42,9 @@ class CarrierQueryResponse extends ResponseService
     /**
      * Carrier list
      *
-     * @see FnacApiClient\Entity\Carrier
+     * @see \FnacApiClient\Entity\Carrier
      *
-     * @return ArrayObject<Carrier>
+     * @return \ArrayObject<Carrier>
      */
     public function getCarriers()
     {
