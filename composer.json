@@ -12,7 +12,7 @@
         "symfony/finder" : "5.*",
         "symfony/http-foundation": "2.3.*@dev",
         "symfony/serializer": "2.8.*",
-        "symfony/class-loader": "2.0.4",
+        "symfony/class-loader": "3.4.39",
         "symfony/yaml" : "5.*",
         "twbs/bootstrap": "^3.3",
         "components/jquery": "^2.2"
