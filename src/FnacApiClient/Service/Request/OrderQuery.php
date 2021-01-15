@@ -120,7 +120,7 @@ class OrderQuery extends Query
      *
      * @see FnacApiClient\Type\ProductStateType
      *
-     * @param ArrayObject<ProductStateType> $states : Offer states
+     * @param array $states : Offer states
      */
     public function setStates($states)
     {
