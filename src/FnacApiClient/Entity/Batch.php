@@ -48,7 +48,7 @@ class Batch extends Entity
     /**
      * Get the batch status
      *
-     * @see FnacApiClient\Type\ResponseStatusType
+     * @see \FnacApiClient\Type\ResponseStatusType
      *
      * @return string
      */

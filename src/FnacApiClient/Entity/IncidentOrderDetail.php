@@ -11,8 +11,6 @@ namespace FnacApiClient\Entity;
 
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
-use Symfony\Component\Serializer\Normalizer\NormalizableInterface;
 
 /**
  * IncidentOrderDetail definition.
@@ -57,7 +55,7 @@ class IncidentOrderDetail extends Entity
     /**
      * Set action to do on message
      *
-     * @see FnacApiClient\Type\IncidentRefundReasonType
+     * @see \FnacApiClient\Type\IncidentRefundReasonType
      *
      * @param string $refund_reason : refund reason to an order
      */

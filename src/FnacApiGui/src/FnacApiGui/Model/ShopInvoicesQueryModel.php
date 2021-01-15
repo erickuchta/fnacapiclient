@@ -18,7 +18,6 @@
 namespace FnacApiGui\Model;
 
 // Load required classes
-use FnacApiClient\Entity\ShopInvoice;
 use FnacApiClient\Service\Request\ShopInvoiceQuery;
 
 class ShopInvoicesQueryModel extends Model

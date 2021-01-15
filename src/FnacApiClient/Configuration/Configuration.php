@@ -9,6 +9,8 @@
 
 namespace FnacApiClient\Configuration;
 
+use ArrayAccess;
+use LogicException;
 use Symfony\Component\Yaml\Yaml;
 use FnacApiClient\Exception\FileNotFoundException;
 
@@ -19,7 +21,7 @@ use FnacApiClient\Exception\FileNotFoundException;
  * @author     Fnac
  * @version    1.0.0
  */
-class Configuration implements \ArrayAccess
+class Configuration implements ArrayAccess
 {
     CONST CLIENT_CONFIG = 'fnac_api_client';
     CONST HTTP_CLIENT = 'fnac_http_client';
@@ -78,7 +80,7 @@ class Configuration implements \ArrayAccess
 
         /** we must have client_config **/
         if (empty($config_client) || empty($config_client['key']) || empty($config_client['shop_id']) || empty($config_client['partner_id']) || empty($config_client['host'])) {
-            throw new \LogicException(sprintf("The file at %s does not contain any configuration element, please check your file.", $config_path));
+            throw new LogicException(sprintf("The file at %s does not contain any configuration element, please check your file.", $config_path));
         }
 
     }

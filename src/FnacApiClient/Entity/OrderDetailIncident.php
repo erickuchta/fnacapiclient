@@ -9,10 +9,9 @@
 
 namespace FnacApiClient\Entity;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
-use Symfony\Component\Serializer\Normalizer\NormalizableInterface;
 
 /**
  * OrderDetailIncident definition.
@@ -48,7 +47,7 @@ class OrderDetailIncident extends Entity
         $this->created_at = $data['created_at'];
         $this->updated_at = $data['updated_at'];
 
-        $this->refunds = new \ArrayObject();
+        $this->refunds = new ArrayObject();
 
         if (isset($data['refunds']['refund'][0])) {
             foreach ($data['refunds']['refund'] as $refund) {

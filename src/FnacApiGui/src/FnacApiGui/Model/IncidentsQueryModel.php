@@ -18,7 +18,6 @@
 namespace FnacApiGui\Model;
 
 // Load required classes
-use FnacApiClient\Entity\Incident;
 use FnacApiClient\Service\Request\IncidentQuery;
 
 class IncidentsQueryModel extends Model

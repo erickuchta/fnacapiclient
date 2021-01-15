@@ -11,13 +11,6 @@ namespace FnacApiClient\Service\Request;
 
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
-use FnacApiClient\Type\SortOrderType;
-use FnacApiClient\Type\StatusType;
-use FnacApiClient\Type\BoolType;
-use FnacApiClient\Type\UserType;
-use FnacApiClient\Type\IncidentCloseStatusType;
-use FnacApiClient\Type\IncidentOpenStatusType;
-
 /**
  * IncidentQuery Service's definition.
  *
@@ -93,7 +86,7 @@ class IncidentQuery extends Query
     }
 
     /**
-     * @see FnacApiClient\Type\StatusType
+     * @see \FnacApiClient\Type\StatusType
      *
      * @param string $status : Status of incident
      */

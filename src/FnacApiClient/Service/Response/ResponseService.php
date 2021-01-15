@@ -10,6 +10,7 @@
 namespace FnacApiClient\Service\Response;
 
 use FnacApiClient\Service\AbstractService;
+use Symfony\Component\Serializer\Exception\BadMethodCallException;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
@@ -39,7 +40,7 @@ abstract class ResponseService extends AbstractService
     /**
      * Return the status of response
      *
-     * @see FnacApiClient\Type\ResponseStatusType
+     * @see \FnacApiClient\Type\ResponseStatusType
      *
      * @return string
      */

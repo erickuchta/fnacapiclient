@@ -9,6 +9,7 @@
 
 namespace FnacApiClient\Service\Response;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use FnacApiClient\Entity\OrderUpdate;
 
@@ -29,7 +30,7 @@ class OrderUpdateResponse extends ResponseService
     {
         parent::denormalize($denormalizer, $data, $format);
 
-        $this->orders_update = new \ArrayObject();
+        $this->orders_update = new ArrayObject();
 
         if (isset($data['order'])) {
             if (isset($data['order'][0])) {
@@ -49,7 +50,7 @@ class OrderUpdateResponse extends ResponseService
     /**
      * Return the list of order updated
      *
-     * @see FnacApiClient\Entity\OrderUpdate
+     * @see \FnacApiClient\Entity\OrderUpdate
      *
      * @return ArrayObject<OrderUpdate>
      */

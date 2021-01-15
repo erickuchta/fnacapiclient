@@ -9,12 +9,10 @@
 
 namespace FnacApiClient\Entity;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
-use Symfony\Component\Serializer\Normalizer\NormalizableInterface;
 
-use FnacApiClient\Entity\IncidentOrderDetail;
 use FnacApiClient\Type\IncidentUpdateActionType;
 
 /**
@@ -40,7 +38,7 @@ class IncidentOrder extends Entity
      */
     public function __construct()
     {
-        $this->orders_details_incident = new \ArrayObject();
+        $this->orders_details_incident = new ArrayObject();
     }
 
     /**
@@ -90,9 +88,9 @@ class IncidentOrder extends Entity
     {
         return $this->order_id;
     }
-
+    
     /**
-     * @param string $opened_by : Who have create this incident
+     * @param $order_id
      */
     public function setOrderId($order_id)
     {
@@ -110,7 +108,7 @@ class IncidentOrder extends Entity
     /**
      * Set action to do on incident
      *
-     * @see FnacApiClient\Type\IncidentUpdateActionType
+     * @see \FnacApiClient\Type\IncidentUpdateActionType
      *
      * @param string $action : Action to do on order
      */
@@ -122,7 +120,7 @@ class IncidentOrder extends Entity
     /**
      * Add an orderDetail assocaited to an order
      *
-     * @see FnacApiClient\Entity\IncidentOrderDetail
+     * @see \FnacApiClient\Entity\IncidentOrderDetail
      *
      * @param IncidentOrderDetail $order_detail : OrderDetail request for Incident
      */
@@ -136,7 +134,7 @@ class IncidentOrder extends Entity
      *
      * @param ArrayObject $order_details : IncidentOrderDetails request for Incident
      */
-    public function addOrderDetails(\ArrayObject $order_details)
+    public function addOrderDetails(ArrayObject $order_details)
     {
         if (is_array($this->orders_details_incident)) {
             $this->orders_details_incident = array_merge($this->orders_details_incident, $order_details);

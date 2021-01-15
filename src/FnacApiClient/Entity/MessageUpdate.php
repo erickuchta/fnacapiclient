@@ -9,10 +9,9 @@
 
 namespace FnacApiClient\Entity;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
-use Symfony\Component\Serializer\Normalizer\NormalizableInterface;
 
 /**
  * MessageUpdate definition.
@@ -45,7 +44,7 @@ class MessageUpdate extends Entity
         $this->id = $data['@id'];
         $this->status = $data['@status'];
 
-        $this->errors = new \ArrayObject();
+        $this->errors = new ArrayObject();
 
         if (isset($data['error'])) {
             if (isset($data['error'][0])) {
@@ -75,7 +74,7 @@ class MessageUpdate extends Entity
     /**
      * Status of update
      *
-     * @see FnacApiClient\Type\ResponseStatusType
+     * @see \FnacApiClient\Type\ResponseStatusType
      *
      * @return string
      */

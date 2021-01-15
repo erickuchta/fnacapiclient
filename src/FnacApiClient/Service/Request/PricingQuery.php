@@ -9,8 +9,8 @@
 
 namespace FnacApiClient\Service\Request;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
 
 use FnacApiClient\Entity\ProductReference;
 
@@ -27,7 +27,7 @@ class PricingQuery extends Authentified
     const XSD_FILE = "PricingQueryService.xsd";
     const CLASS_RESPONSE = "FnacApiClient\Service\Response\PricingQueryResponse";
 
-    private $product_reference = null;
+    private $product_reference;
 
     /**
      * {@inheritdoc}
@@ -36,7 +36,7 @@ class PricingQuery extends Authentified
     {
         parent::__construct($parameters);
 
-        $this->product_reference = new \ArrayObject();
+        $this->product_reference = new ArrayObject();
     }
 
     /**
@@ -66,7 +66,7 @@ class PricingQuery extends Authentified
     /**
      * Set seller's type
      *
-     * @see FnacApiClient\Type\SellerType
+     * @see \FnacApiClient\Type\SellerType
      *
      * @param string $sellers : Type of sellers (all, others)
      */

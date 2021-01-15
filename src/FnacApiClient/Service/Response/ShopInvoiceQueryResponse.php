@@ -9,8 +9,8 @@
 
 namespace FnacApiClient\Service\Response;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
 
 use FnacApiClient\Entity\ShopInvoice;
 
@@ -22,7 +22,7 @@ use FnacApiClient\Entity\ShopInvoice;
  */
 class ShopInvoiceQueryResponse extends QueryResponse
 {
-    private $shop_invoices = array();
+    private $shop_invoices;
 
     /**
      * {@inheritdoc}
@@ -31,7 +31,7 @@ class ShopInvoiceQueryResponse extends QueryResponse
     {
         parent::denormalize($denormalizer, $data, $format);
         
-        $this->shop_invoices = new \ArrayObject();
+        $this->shop_invoices = new ArrayObject();
         
         if(!empty($data['shop_invoice'])) {
             foreach ($data['shop_invoice'] as $shop_invoice) {
@@ -45,7 +45,7 @@ class ShopInvoiceQueryResponse extends QueryResponse
     /**
      * List of shops' invoices
      *
-     * @see FnacApiClient\Entity\ShopInvoice
+     * @see \FnacApiClient\Entity\ShopInvoice
      *
      * @return ArrayObject<ShopInvoice>
      */

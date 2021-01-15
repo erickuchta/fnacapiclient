@@ -9,10 +9,9 @@
 
 namespace FnacApiClient\Entity;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
-use Symfony\Component\Serializer\Normalizer\NormalizableInterface;
 
 /**
  * OfferUpdate definition.
@@ -49,7 +48,7 @@ class OfferUpdate extends Entity
 
         $this->status = $data['@status'];
 
-        $this->errors = new \ArrayObject();
+        $this->errors = new ArrayObject();
 
         if (isset($data['error'])) {
             if (isset($data['error'][0])) {
@@ -99,7 +98,7 @@ class OfferUpdate extends Entity
     /**
      * Status of offer update
      *
-     * @see FnacApiClient\Type\ResponseStatusType
+     * @see \FnacApiClient\Type\ResponseStatusType
      *
      * @return string
      */

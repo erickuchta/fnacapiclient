@@ -24,7 +24,6 @@ use FnacApiClient\Service\Request\OrderUpdate;
 
 use FnacApiClient\Entity\OrderDetail;
 
-use FnacApiClient\Type\OrderStateType;
 use FnacApiClient\Type\OrderDetailActionType;
 use FnacApiClient\Type\OrderActionType;
 

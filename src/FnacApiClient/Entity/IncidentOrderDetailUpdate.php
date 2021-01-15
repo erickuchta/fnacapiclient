@@ -9,10 +9,9 @@
 
 namespace FnacApiClient\Entity;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
-use Symfony\Component\Serializer\Normalizer\NormalizableInterface;
 
 /**
  * OrderDetailIncident definition.
@@ -45,7 +44,7 @@ class IncidentOrderDetailUpdate extends Entity
         $this->status = $data['status'];
         $this->created_at = isset($data['state']) ? $data['state'] : null;
 
-        $this->errors = new \ArrayObject();
+        $this->errors = new ArrayObject();
 
         if (isset($data['error'][0])) {
             foreach ($data['error'] as $error) {
@@ -69,7 +68,7 @@ class IncidentOrderDetailUpdate extends Entity
     }
 
     /**
-     * @see  FnacApiClient\Type\OrderDetailStateType
+     * @see  \FnacApiClient\Type\OrderDetailStateType
      *
      * @return string state of the orderDetail
      */
@@ -79,7 +78,7 @@ class IncidentOrderDetailUpdate extends Entity
     }
 
     /**
-     * @see  FnacApiClient\Type\ResponseStatusType
+     * @see  \FnacApiClient\Type\ResponseStatusType
      *
      * @return Status of the OrderDetail reponse
      */
@@ -90,7 +89,7 @@ class IncidentOrderDetailUpdate extends Entity
 
     /**
      *
-     * @see  FnacApiClient\Entity\Error
+     * @see  \FnacApiClient\Entity\Error
      *
      * @return ArrayObject<Error>
      */

@@ -17,14 +17,10 @@
 
 namespace FnacApiGui\Model;
 
-use FnacApiClient\Entity\Pricing;
-use FnacApiClient\Entity\PricingProduct;
 use FnacApiClient\Entity\ProductReference;
 
 use FnacApiClient\Service\Request\PricingQuery;
 
-use FnacApiClient\Type\ProductStateType;
-use FnacApiClient\Type\ProductType;
 use FnacApiClient\Type\SellerType;
 
 class PricingQueryModel extends Model

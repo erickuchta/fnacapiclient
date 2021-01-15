@@ -10,7 +10,6 @@
 namespace FnacApiClient\Service\Response;
 
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * QueryResponse service base definition for query response

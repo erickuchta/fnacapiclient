@@ -9,8 +9,8 @@
 
 namespace FnacApiClient\Service\Response;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
 
 use FnacApiClient\Entity\Batch;
 
@@ -36,7 +36,7 @@ class BatchQueryResponse extends ResponseService
         $this->nb_batch_running = $data['nb_batch_running'];
         $this->nb_batch_active = $data['nb_batch_active'];
 
-        $this->batchs = new \ArrayObject();
+        $this->batchs = new ArrayObject();
 
         if (isset($data['batch'])) {
             if (isset($data['batch'][0])) {
@@ -76,7 +76,7 @@ class BatchQueryResponse extends ResponseService
     /**
      * List of batch being processed or waiting to be processed
      *
-     * @see FnacApiClient\Entity\Batch
+     * @see \FnacApiClient\Entity\Batch
      *
      * @return ArrayObject<Batch>
      */

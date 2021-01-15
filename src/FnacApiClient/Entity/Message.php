@@ -11,8 +11,6 @@ namespace FnacApiClient\Entity;
 
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
-use Symfony\Component\Serializer\Normalizer\NormalizableInterface;
 
 use FnacApiClient\Type\MessageActionType;
 
@@ -110,7 +108,7 @@ class Message extends Entity
     /**
      * Type of Referer : Order or Offer
      *
-     * @see FnacApiClient\Type\MessageType
+     * @see \FnacApiClient\Type\MessageType
      *
      * @return string
      */
@@ -132,7 +130,7 @@ class Message extends Entity
     /**
      * Sender's type
      *
-     * @see FnacApiClient\Type\MessageFromType
+     * @see \FnacApiClient\Type\MessageFromType
      *
      * @return string
      */
@@ -164,7 +162,7 @@ class Message extends Entity
     /**
      * Is the message Read or Unread
      *
-     * @see FnacApiClient\Type\MessageStateType
+     * @see \FnacApiClient\Type\MessageStateType
      *
      * @return string
      */
@@ -176,7 +174,7 @@ class Message extends Entity
     /**
      * Is message archived or not
      *
-     * @see FnacApiClient\Type\BoolType
+     * @see \FnacApiClient\Type\BoolType
      *
      * @return string
      */
@@ -198,7 +196,7 @@ class Message extends Entity
     /**
      * Message's subject
      *
-     * @see FnacApiClient\Type\MessageSubjectType
+     * @see \FnacApiClient\Type\MessageSubjectType
      *
      * @return string
      */
@@ -220,7 +218,7 @@ class Message extends Entity
     /**
      * Set action to do on message
      *
-     * @see FnacApiClient\Type\MessageActionType
+     * @see \FnacApiClient\Type\MessageActionType
      *
      * @param string $action : Action to do on message
      */
@@ -242,7 +240,7 @@ class Message extends Entity
     /**
      * Set message subject
      *
-     * @see FnacApiClient\Type\MessageSubjectType
+     * @see \FnacApiClient\Type\MessageSubjectType
      *
      * @param string $message_subject : Subject for reply
      */
@@ -254,7 +252,7 @@ class Message extends Entity
     /**
      * Set to who we want to reply
      *
-     * @see FnacApiClient\Type\MessageToType
+     * @see \FnacApiClient\Type\MessageToType
      *
      * @param string $message_to : Person to reply
      */
@@ -276,7 +274,7 @@ class Message extends Entity
     /**
      * Set message's type
      *
-     * @see FnacApiClient\Type\MessageType;
+     * @see \FnacApiClient\Type\MessageType;
      *
      * @param string $message_type : Type of message
      */

@@ -9,6 +9,8 @@
 
 namespace FnacApiClient\Toolbox;
 
+use DomDocument;
+
 /**
  * Class to handle some string functions
  *
@@ -55,7 +57,7 @@ class StringObject
      */
     public static function prettyXml($xml)
     {
-        $dom = new \DomDocument;
+        $dom = new DomDocument;
         $dom->preserveWhiteSpace = false;
         $dom->formatOutput = true;
         if (!@$dom->loadXML($xml)) {

@@ -9,8 +9,8 @@
 
 namespace FnacApiClient\Service\Response;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
 
 use FnacApiClient\Entity\Order;
 
@@ -22,7 +22,7 @@ use FnacApiClient\Entity\Order;
  */
 class OrderQueryResponse extends QueryResponse
 {
-    private $orders = array();
+    private $orders;
 
     /**
      * {@inheritdoc}
@@ -31,7 +31,7 @@ class OrderQueryResponse extends QueryResponse
     {
         parent::denormalize($denormalizer, $data, $format);
 
-        $this->orders = new \ArrayObject();
+        $this->orders = new ArrayObject();
 
         if (isset($data['order'])) {
             if (isset($data['order'][0])) {
@@ -51,7 +51,7 @@ class OrderQueryResponse extends QueryResponse
     /**
      * Order list
      *
-     * @see FnacApiClient\Entity\Order
+     * @see \FnacApiClient\Entity\Order
      *
      * @return ArrayObject<Order>
      */

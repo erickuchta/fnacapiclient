@@ -9,6 +9,7 @@
 
 namespace FnacApiClient\Service\Request;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 use FnacApiClient\Entity\Comment;
 
@@ -34,7 +35,7 @@ class ClientOrderCommentUpdate extends Authentified
     {
         parent::__construct($parameters);
 
-        $this->comments = new \ArrayObject();
+        $this->comments = new ArrayObject();
     }
 
     /**

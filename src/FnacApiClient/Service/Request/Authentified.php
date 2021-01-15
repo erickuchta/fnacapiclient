@@ -10,7 +10,6 @@
 namespace FnacApiClient\Service\Request;
 
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * Authentified service base definition for authentified request.

@@ -9,9 +9,9 @@
 
 namespace FnacApiClient\Entity;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * Order definition.
@@ -47,7 +47,7 @@ class Order extends Entity
      */
     public function __construct()
     {
-        $this->orders_detail = new \ArrayObject();
+        $this->orders_detail = new ArrayObject();
     }
 
     /**
@@ -73,7 +73,7 @@ class Order extends Entity
     /**
      * Set Group action type for order detail action
      *
-     * @see FnacApiClient\Type\OrderActionType
+     * @see \FnacApiClient\Type\OrderActionType
      *
      * @param string $order_action : Action to do on this order
      */
@@ -107,7 +107,7 @@ class Order extends Entity
      */
     public function clearOrdersDetail()
     {
-        $this->orders_detail = new \ArrayObject();
+        $this->orders_detail = new ArrayObject();
     }
 
     /**
@@ -157,7 +157,7 @@ class Order extends Entity
         $this->order_culture = isset($data['order_culture']) ? $data['order_culture'] : "";
         $this->order_id = isset($data['order_id']) ? $data['order_id'] : "";
 
-        $this->orders_detail = new \ArrayObject();
+        $this->orders_detail = new ArrayObject();
 
         if (isset($data['order_detail'][0])) {
             foreach ($data['order_detail'] as $order_detail) {
@@ -245,7 +245,7 @@ class Order extends Entity
     /**
      * Order's state
      *
-     * @see FnacApiClient\Type\OrderStateType
+     * @see \FnacApiClient\Type\OrderStateType
      *
      * @return string
      */

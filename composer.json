@@ -15,7 +15,10 @@
         "symfony/class-loader": "3.4.39",
         "symfony/yaml" : "5.*",
         "twbs/bootstrap": "^3.3",
-        "components/jquery": "^2.2"
+        "components/jquery": "^2.2",
+        "ext-dom": "*",
+        "ext-libxml": "*",
+        "ext-simplexml": "*"
     },
     "license": "MIT",
     "keywords": ["fnac", "marketplace"],

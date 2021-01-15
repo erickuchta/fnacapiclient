@@ -9,6 +9,7 @@
 
 namespace FnacApiClient\Client;
 
+use FnacApiClient\Service\Request\PricesQuery;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Normalizer\CustomNormalizer;
@@ -38,21 +39,21 @@ class Client
     /**
      * Serializer to convert xml to object and object to xml
      *
-     * @var Symfony\Component\Serializer\Serializer
+     * @var Serializer
      */
     private $serializer = null;
 
     /**
      * Client to communicate with a REST WebService
      *
-     * @var Zend\Http\Client
+     * @var ZendClient
      */
     private $streamClient = null;
 
     /**
      * Log object to output information, debug and error
      *
-     * @var Monolog\Logger
+     * @var Logger
      */
     protected $logger = null;
 
@@ -80,7 +81,7 @@ class Client
     /**
      * Create a new Client
      *
-     * @param Serializer $seriliazer : Serializer to convert xml to object or object to xml
+     * @param Serializer $serializer : Serializer to convert xml to object or object to xml
      * @param ZendClient $streamClient : A client to send and receive from a rest webservice
      * @param Logger $logger : A logger to log request and response, useful for debugging
      */
@@ -234,7 +235,7 @@ class Client
 
         //Define uri
         if($service->getClassName() === "PricesQuery") { //Override pricing service name
-            $this->streamClient->setUri($this->getUri() . '/' . \FnacApiClient\Service\Request\PricesQuery::URL_NAME);
+            $this->streamClient->setUri($this->getUri() . '/' . PricesQuery::URL_NAME);
         }
         else {
             $this->streamClient->setUri($this->getUri() . '/' . $service->getServiceName());

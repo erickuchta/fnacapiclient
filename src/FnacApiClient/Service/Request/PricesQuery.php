@@ -9,8 +9,8 @@
 
 namespace FnacApiClient\Service\Request;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
 
 use FnacApiClient\Entity\ProductReference;
 
@@ -37,7 +37,7 @@ class PricesQuery extends Authentified
     {
         parent::__construct($parameters);
 
-        $this->product_reference = new \ArrayObject();
+        $this->product_reference = new ArrayObject();
     }
 
     /**
@@ -75,7 +75,7 @@ class PricesQuery extends Authentified
     /**
      * Set seller's type
      *
-     * @see FnacApiClient\Type\SellerType
+     * @see \FnacApiClient\Type\SellerType
      *
      * @param string $sellers : Type of sellers (all, others)
      */
@@ -87,7 +87,7 @@ class PricesQuery extends Authentified
     /**
      * Set product states filter
      *
-     * @see FnacApiClient\Type\PricingProductStateType
+     * @see \FnacApiClient\Type\PricingProductStateType
      *
      * @param string $states : state of products to retrieve
      */
@@ -99,7 +99,7 @@ class PricesQuery extends Authentified
     /**
      * Set prices type filter
      *
-     * @see FnacApiClient\Type\PriceType
+     * @see \FnacApiClient\Type\PriceType
      *
      * @param string $prices : prices type to retrieve
      */

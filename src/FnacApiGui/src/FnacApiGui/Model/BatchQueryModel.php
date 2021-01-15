@@ -18,7 +18,6 @@
 namespace FnacApiGui\Model;
 
 // Load required classes
-use FnacApiClient\Entity\Batch;
 use FnacApiClient\Service\Request\BatchQuery;
 use FnacApiClient\Service\Request\BatchStatus;
 

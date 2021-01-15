@@ -10,6 +10,7 @@
 namespace FnacApiClient\Client;
 
 
+use Exception;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Normalizer\CustomNormalizer;
@@ -100,7 +101,7 @@ class SimpleClient extends Client
      * Call a service on fnac rest webservice
      *
      * @param Authentified $service : Service to call
-     * @return FnacApiClient\Service\ResponseService
+     * @return \FnacApiClient\Service\ResponseService
      */
     public function callService(RequestService $service, $checkXML = false)
     {
@@ -110,15 +111,16 @@ class SimpleClient extends Client
 
             return parent::callService($service);
         }
-        catch(\Exception $e) {
+        catch(Exception $e) {
             throw $e;
         }
     }
-
+    
     /**
      * Check if we are authentified to fnac rest webservice using Authentification Service
      *
      * @return boolean
+     * @throws ErrorResponseException
      */
     public function checkAuth()
     {
@@ -132,7 +134,7 @@ class SimpleClient extends Client
           $this->token = parent::callService(new Authentification($this->shop_id, $this->partner_id, $this->key));
           $i++;
           if ($i > 50) {
-            throw new \Exception("Error token unvalid for more than 50 times in a row, check if your system is at the right time");
+            throw new Exception("Error token unvalid for more than 50 times in a row, check if your system is at the right time");
           }
         }
       }

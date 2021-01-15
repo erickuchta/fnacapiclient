@@ -9,8 +9,8 @@
 
 namespace FnacApiClient\Service\Request;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
 
 use FnacApiClient\Entity\Order;
 
@@ -36,7 +36,7 @@ class OrderUpdate extends Authentified
     {
         parent::__construct($parameters);
 
-        $this->orders = new \ArrayObject();
+        $this->orders = new ArrayObject();
     }
 
     /**

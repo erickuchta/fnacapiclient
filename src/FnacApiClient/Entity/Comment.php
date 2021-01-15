@@ -9,6 +9,7 @@
 
 namespace FnacApiClient\Entity;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
@@ -49,7 +50,7 @@ class Comment extends Entity
         $this->id = $data['@id'];
         $this->status = $data['@status'];
 
-        $this->errors = new \ArrayObject();
+        $this->errors = new ArrayObject();
 
         if (isset($data['error'])) {
             if (isset($data['error'][0])) {

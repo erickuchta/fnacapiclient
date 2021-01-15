@@ -11,7 +11,6 @@ namespace FnacApiClient\Entity;
 
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * RankedOffer definition.
@@ -76,7 +75,7 @@ class RankedOffer extends Entity
     /**
      * Product seller type
      *
-     * @see FnacApiClient\Type\SellerType
+     * @see \FnacApiClient\Type\SellerType
      *
      * @return string
      */
@@ -138,7 +137,7 @@ class RankedOffer extends Entity
     /**
      * Product state type for this pricing
      *
-     * @see FnacApiClient\Type\ProductStateType
+     * @see \FnacApiClient\Type\ProductStateType
      *
      * @return integer
      */

@@ -37,9 +37,9 @@ class Authentification extends RequestService
     const ROOT_NAME = "auth";
     const CLASS_RESPONSE = "FnacApiClient\Service\Response\Token";
 
-    private $partnerId = 0;
-    private $shopId = 0;
-    private $key = "";
+    private $partnerId;
+    private $shopId;
+    private $key;
 
     /**
      * Build Auth Service

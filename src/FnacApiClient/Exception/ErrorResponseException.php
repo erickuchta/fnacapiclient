@@ -10,6 +10,7 @@
 
 namespace FnacApiClient\Exception;
 
+use ErrorException;
 use Zend\Http\Response;
 
 /**
@@ -18,7 +19,7 @@ use Zend\Http\Response;
  * @author Fnac
  * @version    1.0.0
  */
-class ErrorResponseException extends \ErrorException
+class ErrorResponseException extends ErrorException
 {
   private $severityMapping = array(
     'ERROR' => E_ERROR,

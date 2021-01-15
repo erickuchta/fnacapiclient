@@ -10,7 +10,6 @@
 namespace FnacApiClient\Service\Request;
 
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * OrderQuery Service's definition.
@@ -86,7 +85,7 @@ class OrderQuery extends Query
     /**
      * Set order to sort
      *
-     * @see FnacApiClient\Type\SortOrderType
+     * @see \FnacApiClient\Type\SortOrderType
      *
      * @param string $sort_by_type : Order to sort
      */
@@ -118,7 +117,7 @@ class OrderQuery extends Query
     /**
      * Set orders states
      *
-     * @see FnacApiClient\Type\ProductStateType
+     * @see \FnacApiClient\Type\ProductStateType
      *
      * @param array $states : Offer states
      */

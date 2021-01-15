@@ -9,6 +9,7 @@
 
 namespace FnacApiClient\Service\Request;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 use FnacApiClient\Entity\IncidentOrder;
@@ -35,7 +36,7 @@ class IncidentUpdate extends Authentified
     {
         parent::__construct($parameters);
 
-        $this->orders = new \ArrayObject();
+        $this->orders = new ArrayObject();
     }
 
     /**

@@ -10,12 +10,14 @@
 
 namespace FnacApiClient\Exception;
 
+use Exception;
+
 /**
  * FileNotFoundException class used when a file is not found
  *
  * @author Fnac
  * @version    1.0.0
  */
-class FileNotFoundException extends \Exception
+class FileNotFoundException extends Exception
 {
 }

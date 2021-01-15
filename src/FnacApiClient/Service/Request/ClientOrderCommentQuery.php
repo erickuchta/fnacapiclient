@@ -10,7 +10,6 @@
 namespace FnacApiClient\Service\Request;
 
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use FnacApiClient\Type\CompareType;
 
 /**
  * ClientOrderCommentQuery Service's definition.
@@ -68,7 +67,7 @@ class ClientOrderCommentQuery extends Query
     /**
      * Set rate comparison type filter
      *
-     * @see FnacApiClient\Type\CompareType
+     * @see \FnacApiClient\Type\CompareType
      *
      * @param string $rate_type : Rate comparison type
      */

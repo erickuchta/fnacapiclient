@@ -9,8 +9,8 @@
 
 namespace FnacApiClient\Service\Response;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
 
 use FnacApiClient\Entity\Error;
 use FnacApiClient\Entity\OfferUpdate;
@@ -36,7 +36,7 @@ class BatchStatusResponse extends ResponseService
 
         $this->batch_id = isset($data['batch_id']) ? $data['batch_id'] : "";
 
-        $this->errors = new \ArrayObject();
+        $this->errors = new ArrayObject();
 
         if (isset($data['error'])) {
             if (isset($data['error'][0])) {
@@ -52,7 +52,7 @@ class BatchStatusResponse extends ResponseService
             }
         }
 
-        $this->offers = new \ArrayObject();
+        $this->offers = new ArrayObject();
 
         if (isset($data['offer'])) {
             if (isset($data['offer'][0])) {
@@ -82,7 +82,7 @@ class BatchStatusResponse extends ResponseService
     /**
      * Return errors of batch
      *
-     * @see FnacApiClient\Entity\Error
+     * @see \FnacApiClient\Entity\Error
      *
      * @return ArrayObject<Error>
      */
@@ -94,7 +94,7 @@ class BatchStatusResponse extends ResponseService
     /**
      * Return offers updated
      *
-     * @see FnacApiClient\Entity\OfferUpdate
+     * @see \FnacApiClient\Entity\OfferUpdate
      *
      * @return ArrayObject<OfferUpdate>
      */

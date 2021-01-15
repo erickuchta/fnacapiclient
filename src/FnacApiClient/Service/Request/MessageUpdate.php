@@ -9,6 +9,7 @@
 
 namespace FnacApiClient\Service\Request;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 use FnacApiClient\Entity\Message;
@@ -35,7 +36,7 @@ class MessageUpdate extends Authentified
     {
         parent::__construct($parameters);
 
-        $this->messages = new \ArrayObject();
+        $this->messages = new ArrayObject();
     }
 
     /**

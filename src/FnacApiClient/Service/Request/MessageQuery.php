@@ -81,7 +81,7 @@ class MessageQuery extends Query
      * Set message's type
      *
      * @param string $message_type : Type of message
-     * @see FnacApicClient\Type\MessageType
+     * @see \FnacApicClient\Type\MessageType
      */
     public function setMessageType($message_type)
     {
@@ -92,7 +92,7 @@ class MessageQuery extends Query
      * Set message's state
      *
      * @param string $message_state : State of message
-     * @see FnacApicClient\Type\MessageStateType
+     * @see \FnacApicClient\Type\MessageStateType
      */
     public function setMessageState($message_state)
     {
@@ -103,7 +103,7 @@ class MessageQuery extends Query
      * Set if message is archived or not
      *
      * @param string $message_archived : Is message archived or not ?
-     * @see FnacApicClient\Type\BoolType
+     * @see \FnacApicClient\Type\BoolType
      */
     public function setMessageArchived($message_archived)
     {
@@ -154,7 +154,7 @@ class MessageQuery extends Query
      * Set field on which we want the sort
      *
      * @param string $sort_by : Field to sort by
-     * @see FnacApicClient\Type\SortType
+     * @see \FnacApicClient\Type\SortType
      */
     public function setSortBy($sort_by)
     {
@@ -165,7 +165,7 @@ class MessageQuery extends Query
      * Set the sort order
      *
      * @param string $sort_by_type : Order to sort (ASC or DESC)
-     * @see FnacApicClient\Type\SortOrderType
+     * @see \FnacApicClient\Type\SortOrderType
      */
     public function setSortByType($sort_by_type)
     {

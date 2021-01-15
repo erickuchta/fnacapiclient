@@ -9,6 +9,7 @@
 
 namespace FnacApiClient\Service\Response;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 
 use FnacApiClient\Entity\PricingProduct;
@@ -30,7 +31,7 @@ class PricingQueryResponse extends ResponseService
     {
         parent::denormalize($denormalizer, $data, $format);
 
-        $this->pricing_products = new \ArrayObject();
+        $this->pricing_products = new ArrayObject();
 
         if (isset($data['pricing_product'])) {
             if (isset($data['pricing_product'][0])) {
@@ -50,9 +51,9 @@ class PricingQueryResponse extends ResponseService
     /**
      * Pricing product list
      *
-     * @see FnacApiClient\Entity\PricingProduct
+     * @see \FnacApiClient\Entity\PricingProduct
      *
-     * @return Array<PricingProduct>
+     * @return ArrayObject<PricingProduct>
      */
     public function getPricingProducts()
     {

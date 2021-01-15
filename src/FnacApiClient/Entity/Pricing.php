@@ -86,7 +86,7 @@ class Pricing extends Entity
     /**
      * Product state type for this pricing
      *
-     * @see FnacApiClient\Type\ProductStateType
+     * @see \FnacApiClient\Type\ProductStateType
      *
      * @return integer
      */
@@ -128,7 +128,7 @@ class Pricing extends Entity
     /**
      * Product seller type
      *
-     * @see FnacApiClient\Type\SellerType
+     * @see \FnacApiClient\Type\SellerType
      *
      * @return string
      */

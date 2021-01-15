@@ -11,7 +11,6 @@ namespace FnacApiClient\Entity;
 
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * OrderDetail definition.
@@ -114,7 +113,7 @@ class OrderDetail extends Entity
     /**
      * Order detail state
      *
-     * @see FnacApiClient\Type\OrderDetailStateType
+     * @see \FnacApiClient\Type\OrderDetailStateType
      *
      * @return string
      */
@@ -176,7 +175,7 @@ class OrderDetail extends Entity
     /**
      * Product's state
      *
-     * @see FnacApiClient\Type\ProductStateType
+     * @see \FnacApiClient\Type\ProductStateType
      *
      * @return integer
      */
@@ -188,7 +187,7 @@ class OrderDetail extends Entity
     /**
      * Product state label
      *
-     * @see FnacApiClient\Type\ProductStateType
+     * @see \FnacApiClient\Type\ProductStateType
      *
      * @return string
      */
@@ -330,7 +329,7 @@ class OrderDetail extends Entity
     /**
      * Set the specific action to do on this order detail depdending on order action group
      *
-     * @see FnacApiClient\Type\OrderDetailActionType
+     * @see \FnacApiClient\Type\OrderDetailActionType
      *
      * @param string $action : Action to do on this order detail
      */

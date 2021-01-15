@@ -9,6 +9,7 @@
 
 namespace FnacApiClient\Entity;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
@@ -41,7 +42,7 @@ class StandardPricing extends Entity
         $this->seller_offer_price = isset($data['seller_offer']['price']) ? $data['seller_offer']['price'] : "";
         $this->seller_offer_shipping_price = isset($data['seller_offer']['shipping_price']) ? $data['seller_offer']['shipping_price'] : "";
         
-        $this->ranked_offers = new \ArrayObject();
+        $this->ranked_offers = new ArrayObject();
         
         if (isset($data['ranked_offers'][0])) {
             foreach ($data['ranked_offers'] as $ranked_offer) {

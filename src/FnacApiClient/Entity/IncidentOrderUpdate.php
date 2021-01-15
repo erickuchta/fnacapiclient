@@ -9,6 +9,7 @@
 
 namespace FnacApiClient\Entity;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
@@ -60,7 +61,7 @@ class IncidentOrderUpdate extends Entity
             $this->state = $data['state'];
         }
 
-        $this->errors = new \ArrayObject();
+        $this->errors = new ArrayObject();
 
         if (isset($data['error'])) {
             if (isset($data['error'][0])) {
@@ -76,7 +77,7 @@ class IncidentOrderUpdate extends Entity
             }
         }
 
-        $this->order_details = new \ArrayObject();
+        $this->order_details = new ArrayObject();
 
         if (isset($data['order_detail'])) {
             if (isset($data['order_detail'][0])) {
@@ -117,7 +118,7 @@ class IncidentOrderUpdate extends Entity
     /**
      * Incident's status
      *
-     * @see FnacApiClient\Type\StatusType
+     * @see \FnacApiClient\Type\StatusType
      * @return string
      */
     public function getIncidentStatus()
@@ -128,7 +129,7 @@ class IncidentOrderUpdate extends Entity
     /**
      * Status of update
      *
-     * @see FnacApiClient\Type\ResponseStatusType
+     * @see \FnacApiClient\Type\ResponseStatusType
      *
      * @return string
      */
@@ -140,7 +141,7 @@ class IncidentOrderUpdate extends Entity
     /**
      * Incident's State
      *
-     * @see FnacApiClient\Type\OrderStateType
+     * @see \FnacApiClient\Type\OrderStateType
      *
      * @return string
      */
@@ -152,7 +153,7 @@ class IncidentOrderUpdate extends Entity
     /**
      * Errors that happens during update
      *
-     * @see FnacApiClient\Entity\IncidentOrderDetailUpdate
+     * @see \FnacApiClient\Entity\IncidentOrderDetailUpdate
      *
      * @return ArrayObject<IncidentOrderDetailUpdate>
      */

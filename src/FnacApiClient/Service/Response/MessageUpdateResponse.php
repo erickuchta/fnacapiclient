@@ -9,8 +9,8 @@
 
 namespace FnacApiClient\Service\Response;
 
+use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
 
 use FnacApiClient\Entity\MessageUpdate;
 
@@ -31,7 +31,7 @@ class MessageUpdateResponse extends ResponseService
     {
         parent::denormalize($denormalizer, $data, $format);
 
-        $this->messages = new \ArrayObject();
+        $this->messages = new ArrayObject();
 
         if (isset($data['message'])) {
             if (isset($data['message'][0])) {
@@ -51,7 +51,7 @@ class MessageUpdateResponse extends ResponseService
     /**
      * Message updated list
      *
-     * @see FnacApiClient\Entity\MessageUpdate
+     * @see \FnacApiClient\Entity\MessageUpdate
      *
      * @return ArrayObject<MessageUpdate>
      */
